@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "CmcgdrP3oGnjrmtwoNla0h0pTK1vXPgzM8hkl6BO+G0=",
+  "Source": "SensorMicroserviceProject",
+  "BasePath": "_content/SensorMicroserviceProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

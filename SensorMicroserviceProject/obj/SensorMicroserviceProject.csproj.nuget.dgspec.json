@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Projects\\MainProjects\\SensorMicroservice\\SensorMicroserviceSolution\\SensorMicroserviceProject\\SensorMicroserviceProject.csproj": {}
+  },
+  "projects": {
+    "D:\\Projects\\MainProjects\\SensorMicroservice\\SensorMicroserviceSolution\\SensorMicroserviceProject\\SensorMicroserviceProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\MainProjects\\SensorMicroservice\\SensorMicroserviceSolution\\SensorMicroserviceProject\\SensorMicroserviceProject.csproj",
+        "projectName": "SensorMicroserviceProject",
+        "projectPath": "D:\\Projects\\MainProjects\\SensorMicroservice\\SensorMicroserviceSolution\\SensorMicroserviceProject\\SensorMicroserviceProject.csproj",
+        "packagesPath": "C:\\Users\\doguk\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\MainProjects\\SensorMicroservice\\SensorMicroserviceSolution\\SensorMicroserviceProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\doguk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.Extensions.Http.Resilience": {
+              "target": "Package",
+              "version": "[9.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\doguk\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

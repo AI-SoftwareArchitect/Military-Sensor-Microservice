@@ -1,0 +1,51 @@
+﻿version: '3.8'
+
+services:
+  sensorrecognizerproject:
+    image: sensorrecognizerproject
+    build:
+      context: .
+      dockerfile: SensorRecognizerProject/Dockerfile
+    ports:
+      - "5062:80"  # Bu satır, yerel makinada 5000 portu ile Docker konteynerinde 80 portunu yönlendirir.
+    depends_on:
+      - rabbitmq  # Bu servis RabbitMQ'ya bağımlıdır.
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development  # Çevresel değişken, geliştirme ortamında çalışacak şekilde ayarlanabilir.
+    networks:
+      - sensor_network  # Bu servis özel ağda çalışacak
+
+  sensormicroserviceproject:
+    image: sensormicroserviceproject
+    build:
+      context: .
+      dockerfile: SensorMicroserviceProject/Dockerfile
+    ports:
+      - "5001:80"  # Bu satır, sensormicroserviceproject için 5001 portunu yönlendirir.
+    depends_on:
+      - rabbitmq  # Bu servis RabbitMQ'ya bağımlıdır.
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development  # Çevresel değişken, geliştirme ortamında çalışacak şekilde ayarlanabilir.
+    networks:
+      - sensor_network  # Bu servis özel ağda çalışacak
+
+  rabbitmq:
+    image: "rabbitmq:3-management"  # RabbitMQ'nun yönetim paneliyle birlikte olan versiyonunu kullanıyoruz.
+    ports:
+      - "5672:5672"  # RabbitMQ'ya bağlanmak için kullanılan varsayılan port.
+      - "15672:15672"  # RabbitMQ'nun yönetim paneline erişim için kullanılan port (Web UI).
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest  # Varsayılan kullanıcı adı
+      - RABBITMQ_DEFAULT_PASS=guest  # Varsayılan parola
+    networks:
+      - sensor_network  # RabbitMQ da aynı ağda olacak
+
+networks:
+  sensor_network:
+    driver: bridge  # Bu ağ "bridge" modunda olacak
+  databasehandlerapı:
+    image: databasehandlerapı
+    build:
+      context: .
+      dockerfile: DatabaseHandlerAPI/Dockerfile
+
